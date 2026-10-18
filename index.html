@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="theme-color" content="#12131a">
+<meta name="description" content="Aplikasi membaca dan menulis novel pribadi">
+<title>Ruang Novel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="reading-progress" id="readingProgress"></div>
+
+<header>
+  <div class="logo">📚 Ruang<span>Novel</span></div>
+  <div class="header-actions">
+    <button id="settingsBtn" title="Pengaturan">⚙️</button>
+    <button id="exportBtn" title="Ekspor Data">💾</button>
+    <button id="importBtn" title="Impor Data">📂</button>
+  </div>
+</header>
+
+<main id="app"></main>
+<input type="file" id="importFile" accept=".json,application/json" hidden>
+
+<!-- Settings Modal -->
+<div id="settingsModal" class="modal-overlay hidden">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Pengaturan</h2>
+      <button class="modal-close" id="closeSettings">×</button>
+    </div>
+    <div class="settings-grid">
+      <div class="setting-item">
+        <label>Ukuran Font Pembaca</label>
+        <input type="range" id="fontSizeRange" min="14" max="30" value="19">
+        <span id="fontSizeValue">19px</span>
+      </div>
+      <div class="setting-item">
+        <label>Tema</label>
+        <select id="themeSelect">
+          <option value="dark">Gelap</option>
+          <option value="light">Terang</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+  </html>
